@@ -10,12 +10,13 @@
         android:id="@+id/txt_tittle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:text="@string/tittle"
+        android:textColor="@color/black"
         android:textSize="40sp"
         android:textStyle="bold|italic"
-        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,7 +32,7 @@
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.447">
+        app:layout_constraintVertical_bias="0.356">
 
         <Button
             android:id="@+id/button_cardNumbers"
@@ -98,13 +99,15 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card_names"
         android:layout_width="370dp"
-        android:layout_height="240dp"
+        android:layout_height="300dp"
         app:cardBackgroundColor="@color/black"
         app:cardCornerRadius="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_cardNumber_tittle" >
+        app:layout_constraintTop_toBottomOf="@+id/txt_cardNumber_tittle"
+        app:layout_constraintVertical_bias="0.339">
 
         <TextView
             android:id="@+id/txt_cardNames_tittle"
@@ -112,20 +115,20 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:text="@string/txt_cardNames_tittle"
             android:gravity="center"
+            android:text="@string/txt_cardNames_tittle"
             android:textColor="@color/white"
             android:textSize="18sp" />
 
         <EditText
             android:id="@+id/input_cardNames_name"
-            android:layout_width="135dp"
+            android:layout_width="174dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="70dp"
             android:backgroundTint="@color/white"
             android:ems="10"
-            android:gravity=""
+            android:gravity="center"
             android:hint="@string/input_cardNames_name"
             android:inputType="textPersonName"
             android:textColor="@color/white"
@@ -133,32 +136,42 @@
 
         <Button
             android:id="@+id/button_cardNames_add"
-            android:layout_width="78dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="160dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="120dp"
             android:backgroundTint="@color/green"
-            android:textColor="@color/black"
-            android:layout_marginTop="70dp"
             android:text="@string/button_cardNames_add"
-            app:cornerRadius="80dp"/>
+            android:textColor="@color/black"
+            app:cornerRadius="80dp" />
 
         <Button
             android:id="@+id/button_cardNames_sort"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="250dp"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="120dp"
             android:backgroundTint="@color/green"
-            android:textColor="@color/black"
-            android:layout_marginTop="70dp"
             android:text="@string/button_cardNames_sort"
-            app:cornerRadius="80dp"/>
+            android:textColor="@color/black"
+            app:cornerRadius="80dp" />
+
+        <Button
+            android:id="@+id/button_cardNames_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:layout_marginLeft="260dp"
+            android:backgroundTint="@color/red"
+            android:text="@string/button_cardNames_clear"
+            app:cornerRadius="80dp" />
 
         <TextView
             android:id="@+id/txt_cardNames_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="80dp"
             android:textColor="@color/white"
             android:textSize="28sp" />
 

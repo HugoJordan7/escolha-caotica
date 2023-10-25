@@ -6,8 +6,13 @@
     <string name="input_cardNumbers_maximum">Máximo</string>
     <string name="button_cardNumbers">Sortear</string>
     <string name="txt_cardNumbers_result">Result</string>
-    <string name="txt_cardNames_tittle">Use Add para adicionar nomes ou Sortear para obter o resultado</string>
+    <string name="txt_cardNames_tittle">Use Adicionar para adicionar nomes ou Sortear para obter o resultado</string>
     <string name="input_cardNames_name">Nome</string>
-    <string name="button_cardNames_add">Add</string>
+    <string name="button_cardNames_add">Adicionar</string>
     <string name="button_cardNames_sort">Sortear</string>
+    <string name="button_cardNames_clear">Limpar</string>
+    <string name="toast_cardNames_clear">Não há registros de nomes para limpar</string>
+    <string name="toast_cardNames_isEmpty">Informe um nome</string>
+    <string name="toast_cardNumbers_isEmpty">Informe os valores do intervalo</string>
+    <string name="toast_cardNumbers_invalidMinimum">O número mínimo do intervalo não pode ser maior do que o máximo</string>
 </resources>
