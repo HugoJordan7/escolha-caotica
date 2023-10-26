@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Escolha Caotica</string>
     <string name="tittle">Escolha Caótica</string>
-    <string name="text_cardNumbers_tittle">Informe o intervalo dos números</string>
+    <string name="text_cardNumbers_tittle">Entre</string>
+    <string name="text_cardNumbers_tittle2">e</string>
     <string name="input_cardNumbers_minimum">Mínimo</string>
     <string name="input_cardNumbers_maximum">Máximo</string>
     <string name="button_cardNumbers">Sortear</string>
