@@ -16,4 +16,5 @@
     <string name="toast_cardNames_isEmpty">Informe um nome</string>
     <string name="toast_cardNumbers_isEmpty">Informe os valores do intervalo</string>
     <string name="toast_cardNumbers_invalidMinimum">O número mínimo do intervalo não pode ser maior do que o máximo</string>
+    <string name="text_author">Developed by H. Jordan</string>
 </resources>

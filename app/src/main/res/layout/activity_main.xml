@@ -14,7 +14,6 @@
         android:layout_marginTop="16dp"
         android:text="@string/tittle"
         android:textColor="@color/white"
-        android:textFont="sans-serif"
         android:textSize="60sp"
         android:textStyle="bold"
         app:fontFamily="cursive"
@@ -24,18 +23,33 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/txt_cardNumber_tittle"
+        android:id="@+id/border_card_numbers"
         android:layout_width="370dp"
         android:layout_height="200dp"
         android:layout_marginBottom="160dp"
-        app:cardBackgroundColor="@color/black"
+        app:cardBackgroundColor="@color/gray"
         app:cardCornerRadius="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.356">
+        app:layout_constraintVertical_bias="0.388"/>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_numbers"
+        android:layout_width="360dp"
+        android:layout_height="190dp"
+        android:layout_marginBottom="160dp"
+        app:cardBackgroundColor="@color/cardsColor"
+        app:cardCornerRadius="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.388">
 
         <TextView
             android:id="@+id/text_cardNumbers_tittle"
@@ -92,7 +106,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="70dp"
             android:backgroundTint="@color/green"
             android:text="@string/button_cardNumbers"
             android:textColor="@color/black"
@@ -104,30 +118,43 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="75dp"
+            android:layout_marginTop="62dp"
             android:textColor="@color/white"
             android:textSize="28sp" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_names"
+        android:id="@+id/border_card_names"
         android:layout_width="370dp"
-        android:layout_height="300dp"
-        app:cardBackgroundColor="@color/black"
+        android:layout_height="230dp"
+        app:cardBackgroundColor="@color/gray"
         app:cardCornerRadius="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_cardNumber_tittle"
-        app:layout_constraintVertical_bias="0.339">
+        app:layout_constraintTop_toBottomOf="@+id/card_numbers"
+        app:layout_constraintVertical_bias="0.258"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_names"
+        android:layout_width="360dp"
+        android:layout_height="220dp"
+        app:cardBackgroundColor="@color/cardsColor"
+        app:cardCornerRadius="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_numbers"
+        app:layout_constraintVertical_bias="0.258">
 
         <EditText
             android:id="@+id/input_cardNames_name"
             android:layout_width="174dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="10dp"
             android:backgroundTint="@color/white"
             android:ems="10"
             android:gravity="center"
@@ -140,8 +167,8 @@
             android:id="@+id/button_cardNames_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="120dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="60dp"
             android:backgroundTint="@color/green"
             android:text="@string/button_cardNames_add"
             android:textColor="@color/black"
@@ -151,8 +178,8 @@
             android:id="@+id/button_cardNames_sort"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="140dp"
-            android:layout_marginTop="120dp"
+            android:layout_marginLeft="142dp"
+            android:layout_marginTop="60dp"
             android:backgroundTint="@color/green"
             android:text="@string/button_cardNames_sort"
             android:textColor="@color/black"
@@ -162,10 +189,11 @@
             android:id="@+id/button_cardNames_clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
-            android:layout_marginLeft="260dp"
+            android:layout_marginLeft="255dp"
+            android:layout_marginTop="60dp"
             android:backgroundTint="@color/red"
             android:text="@string/button_cardNames_clear"
+            android:textColor="@color/black"
             app:cornerRadius="80dp" />
 
         <TextView
@@ -173,10 +201,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="40dp"
             android:textColor="@color/white"
             android:textSize="28sp" />
 
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/txt_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_author"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

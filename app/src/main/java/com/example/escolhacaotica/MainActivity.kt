@@ -46,6 +46,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this,R.string.toast_cardNames_isEmpty,Toast.LENGTH_SHORT).show()
             } else{
                 listNames.add(name)
+                editName.text = null
             }
         }
 
