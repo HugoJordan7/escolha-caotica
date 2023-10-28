@@ -127,7 +127,7 @@
         android:id="@+id/border_card_names"
         android:layout_width="370dp"
         android:layout_height="230dp"
-        android:layout_marginBotton="6dp"
+        android:layout_marginBottom="6dp"
         app:cardBackgroundColor="@color/gray"
         app:cardCornerRadius="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
