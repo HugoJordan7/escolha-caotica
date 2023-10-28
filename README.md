@@ -5,7 +5,7 @@ Escolha Caótica é um aplicativo exclusivo para dispositivos Android que possui
 - O segundo card se refere ao sorteio de nomes, o usuário deve informar um nome por vez através do botão adicionar, o botão de sortear deve exibir o resultado e o de limpar apaga todos os registros dos nomes informados anteriormente.
 
 # Download atualizado
-Faça o download clicando [aqui.](https://github.com/HugoJordan7/escolha-caotica/blob/main/Escolha%20Ca%C3%B3tica.apk)
+Faça o download clicando [aqui.](https://github.com/HugoJordan7/escolha-caotica/raw/main/Escolha%20Ca%C3%B3tica.apk)
 
 # Visualização
 <img src="https://github.com/HugoJordan7/escolha-caotica/blob/main/Escolha%20Ca%C3%B3tica.jpg" width="300" alt="Imagem do app">
