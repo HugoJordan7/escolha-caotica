@@ -6,7 +6,7 @@
     <string name="input_cardNumbers_minimum">Mínimo</string>
     <string name="input_cardNumbers_maximum">Máximo</string>
     <string name="button_cardNumbers">Sortear</string>
-    <string name="txt_cardNumbers_result">Result</string>
+    <string name="txt_cards_result">Último resultado:</string>
     <string name="txt_cardNames_tittle">Use Adicionar para adicionar nomes ou Sortear para obter o resultado</string>
     <string name="input_cardNames_name">Nome</string>
     <string name="button_cardNames_add">Adicionar</string>

@@ -120,7 +120,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="62dp"
             android:textColor="@color/white"
-            android:textSize="28sp" />
+            android:textSize="24sp" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -204,7 +204,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
             android:textColor="@color/white"
-            android:textSize="28sp" />
+            android:textSize="24sp" />
 
     </androidx.cardview.widget.CardView>
 
