@@ -8,6 +8,6 @@ Escolha Caótica, feito através do Android Studio em linguagem Kotlin, é um ap
 Faça o download clicando [aqui.](https://github.com/HugoJordan7/escolha-caotica/raw/main/Escolha%20Ca%C3%B3tica.apk)
 
 # Visualização
-<img src="https://github.com/HugoJordan7/escolha-caotica/assets/116570979/1689542a-fbd2-4fc1-8349-3cc297950edf" width="250" alt="Imagem do app1"> 
-<img src="https://github.com/HugoJordan7/escolha-caotica/assets/116570979/b884dc94-2042-4367-b9cf-74c340aa0440" width="250" alt="Imagem do app2">
-<img src="https://github.com/HugoJordan7/escolha-caotica/assets/116570979/284e462e-a747-4cf0-819d-032ba525df0e" width="250" alt="Imagem do app3"> 
+<img src="https://github.com/HugoJordan7/escolha-caotica/assets/116570979/1689542a-fbd2-4fc1-8349-3cc297950edf" width="200" alt="Imagem do app1"> 
+<img src="https://github.com/HugoJordan7/escolha-caotica/assets/116570979/b884dc94-2042-4367-b9cf-74c340aa0440" width="200" alt="Imagem do app2">
+<img src="https://github.com/HugoJordan7/escolha-caotica/assets/116570979/284e462e-a747-4cf0-819d-032ba525df0e" width="200" alt="Imagem do app3"> 
