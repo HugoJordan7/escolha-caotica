@@ -13,7 +13,7 @@
         <ImageView style="@style/BackgroundCardView"/>
 
         <EditText
-            android:id="@+id/input_cardNames_name"
+            android:id="@+id/edit_name"
             android:hint="@string/input_cardNames_name"
             android:layout_width="174dp"
             android:layout_height="wrap_content"
@@ -26,28 +26,28 @@
             android:textColorHint="@color/gray" />
 
         <Button
-            android:id="@+id/button_cardNames_add"
+            android:id="@+id/button_add"
             android:backgroundTint="@color/green"
             android:text="@string/button_cardNames_add"
             android:layout_marginLeft="15dp"
             style="@style/DefaultCardButton"/>
 
         <Button
-            android:id="@+id/button_cardNames_sort"
+            android:id="@+id/button_sort"
             android:backgroundTint="@color/green"
             android:layout_marginLeft="142dp"
             android:text="@string/button_cardNames_sort"
             style="@style/DefaultCardButton"/>
 
         <Button
-            android:id="@+id/button_cardNames_clear"
+            android:id="@+id/button_clear"
             android:layout_marginLeft="255dp"
             android:backgroundTint="@color/red"
             android:text="@string/button_cardNames_clear"
             style="@style/DefaultCardButton" />
 
         <TextView
-            android:id="@+id/txt_cardNames_result"
+            android:id="@+id/txt_result"
             style="@style/DefaultCardResult"/>
 
     </androidx.cardview.widget.CardView>

@@ -24,7 +24,8 @@
     <include layout="@layout/card_view_numbers"
         android:id="@+id/card_numbers"/>
 
-    <include layout="@layout/card_view_names"/>
+    <include layout="@layout/card_view_names"
+        android:id="@+id/card_names"/>
 
     <TextView
         android:id="@+id/txt_author"
