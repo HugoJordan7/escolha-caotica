@@ -1,105 +1,93 @@
 package com.example.escolhacaotica
 
-import android.content.Context
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import com.example.escolhacaotica.databinding.ActivityMainBinding
+import com.example.escolhacaotica.model.PreferencesModel
 import java.util.*
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity : AppCompatActivity(), Observer {
 
+    private lateinit var model: PreferencesModel
+
+    private val random = Random()
     private lateinit var binding: ActivityMainBinding
-    private lateinit var prefsNumbers: SharedPreferences
-    private lateinit var prefsNames: SharedPreferences
-    var listNames = mutableSetOf<String>()
+    private val listNames = mutableSetOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var prefsNumbers = getSharedPreferences("dataBaseNumbers", Context.MODE_PRIVATE)
-        var prefsNumbersResult = prefsNumbers.getString("lastNumberSorted",null)
-        if(prefsNumbersResult != null){
-            binding.cardNumbers.txtResult.text = getString(R.string.txt_cards_result) + " " +  prefsNumbersResult
-        }
-
-        prefsNames = getSharedPreferences("dataBaseNames", Context.MODE_PRIVATE)
-        var prefsNamesResult = prefsNames.getString("lastNameSorted",null)
-        if(prefsNamesResult != null){
-            binding.cardNames.txtResult.text = getString(R.string.txt_cards_result) + " " + prefsNamesResult
-        }
-
-        binding.cardNumbers.buttonSorted.setOnClickListener(this)
-        binding.cardNames.buttonAdd.setOnClickListener(this)
-        binding.cardNames.buttonClear.setOnClickListener(this)
-        binding.cardNames.buttonSort.setOnClickListener(this)
-    }
-
-    override fun onClick(v: View?) {
-        when(v?.id){
-            binding.cardNumbers.buttonSorted.id -> numberButtonResultListener()
-            binding.cardNames.buttonAdd.id -> namesButtonAddListener()
-            binding.cardNames.buttonClear.id -> namesButtonClearListener()
-            binding.cardNames.buttonSort.id -> namesButtonSortListener()
-        }
-    }
-
-
-    private fun numberButtonResultListener(){
+        model = PreferencesModel(this)
+        model.addObserver(this)
         binding.cardNumbers.apply {
-            if(binding.cardNumbers.editMinimum.text.toString().isEmpty() ||
-                binding.cardNumbers.editMaximum.text.toString().isEmpty()){
-                Toast.makeText(this@MainActivity,R.string.toast_cardNumbers_isEmpty,Toast.LENGTH_SHORT).show()
+            txtResult.text = model.getLastNumberSorted()
+            buttonSorted.setOnClickListener { numberButtonResultListener() }
+        }
+        binding.cardNames.apply {
+            txtResult.text = model.getLastNameSorted()
+            buttonAdd.setOnClickListener { namesButtonAddListener() }
+            buttonClear.setOnClickListener { namesButtonClearListener() }
+            buttonSort.setOnClickListener { namesButtonSortListener() }
+        }
+    }
+
+    private fun numberButtonResultListener() {
+        binding.cardNumbers.apply {
+            if (editMinimum.text.toString().isEmpty() || editMaximum.text.toString().isEmpty()) {
+                Toast.makeText(this@MainActivity, R.string.toast_cardNumbers_isEmpty, Toast.LENGTH_SHORT).show()
                 return
             }
-            var random = Random()
-            var min = editMinimum.text.toString().toInt()
-            var max = editMaximum.text.toString().toInt()
+            val min = editMinimum.text.toString().toInt()
+            val max = editMaximum.text.toString().toInt()
             if (min > max) {
                 Toast.makeText(this@MainActivity, R.string.toast_cardNumbers_invalidMinimum, Toast.LENGTH_SHORT).show()
-            } else {
-                var numberResult = random.nextInt(max - min + 1) + min
-                txtResult.text = numberResult.toString()
+                return
             }
-            var editorNumbers = prefsNumbers.edit()
-            editorNumbers.putString("lastNumberSorted",txtResult.text.toString())
-            editorNumbers.apply()
+            val numberResult = random.nextInt(max - min + 1) + min
+            model.setLastNumberSorted(PreferencesModel.NUMBERS_DB, numberResult.toString())
         }
     }
 
-    private fun namesButtonAddListener(){
+    private fun namesButtonAddListener() {
         binding.cardNames.editName.text.apply {
-            if(toString().isEmpty()){
-                Toast.makeText(this@MainActivity,R.string.toast_cardNames_isEmpty,Toast.LENGTH_SHORT).show()
-            } else{
+            if (toString().isEmpty()) {
+                Toast.makeText(this@MainActivity, R.string.toast_cardNames_isEmpty, Toast.LENGTH_SHORT).show()
+            } else {
                 listNames.add(toString())
                 null
             }
         }
     }
 
-    private fun namesButtonClearListener(){
-        if(listNames.size == 0){
-            Toast.makeText(this,R.string.toast_cardNames_clear,Toast.LENGTH_SHORT).show()
-        } else{
+    private fun namesButtonClearListener() {
+        if (listNames.size == 0) {
+            Toast.makeText(this, R.string.toast_cardNames_clear, Toast.LENGTH_SHORT).show()
+        } else {
             listNames.clear()
             binding.cardNames.txtResult.text = null
         }
     }
 
-    private fun namesButtonSortListener(){
-        binding.cardNames.txtResult.text.apply {
-            if (listNames.size == 0) {
-                Toast.makeText(this@MainActivity, R.string.toast_cardNames_isEmpty, Toast.LENGTH_SHORT).show()
+    private fun namesButtonSortListener() {
+        if (listNames.size == 0) {
+            Toast.makeText(this@MainActivity, R.string.toast_cardNames_isEmpty, Toast.LENGTH_SHORT).show()
+        } else {
+            model.setLastNameSorted(PreferencesModel.NAMES_DB, listNames.random())
+        }
+    }
+
+    override fun update(o: Observable?, arg: Any?) {
+        if (o is PreferencesModel) {
+            val newPair = arg as Pair<String, String>
+            val key = newPair.first
+            val value = newPair.second
+            if (key == PreferencesModel.NUMBERS_DB) {
+                binding.cardNumbers.txtResult.text = value
             } else {
-                listNames.random()
-                var editorNames = prefsNames.edit()
-                editorNames.putString("lastNameSorted", toString())
-                editorNames.apply()
+                binding.cardNames.txtResult.text = value
             }
         }
     }
