@@ -55,7 +55,10 @@ class MainActivity : AppCompatActivity(), Observer {
         binding.cardNames.editName.text.apply {
             if (toString().isEmpty()) {
                 Toast.makeText(this@MainActivity, R.string.toast_cardNames_isEmpty, Toast.LENGTH_SHORT).show()
+            } else if(listNames.contains(toString())){
+                Toast.makeText(this@MainActivity, R.string.toast_name_is_repeated, Toast.LENGTH_SHORT).show()
             } else {
+                Toast.makeText(this@MainActivity, getString(R.string.toast_name_is_add,toString()), Toast.LENGTH_SHORT).show()
                 listNames.add(toString())
                 null
             }

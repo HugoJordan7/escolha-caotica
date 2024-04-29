@@ -23,7 +23,8 @@
             android:ems="10"
             android:gravity="center"
             android:inputType="textPersonName"
-            android:textColorHint="@color/gray" />
+            android:textColorHint="@color/gray"
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/button_add"
